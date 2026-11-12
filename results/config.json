@@ -1,0 +1,20 @@
+{
+ "lam": 2.0,
+ "rec2_beta": 1.0,
+ "rec3": {
+  "active": {
+   "gamma_min": 10,
+   "gamma_disc": 10
+  },
+  "passive": {
+   "gamma_min": 2,
+   "gamma_disc": 10
+  }
+ },
+ "rec4_k": 50,
+ "rec4_gamma_disc": 5,
+ "rec4_beta": 1.0,
+ "rec5_kind": "cos",
+ "rec5_k": 50,
+ "kappa": null
+}
