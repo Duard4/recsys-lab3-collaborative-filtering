@@ -41,7 +41,7 @@ push(
   Center("ІМЕНА ТАРАСА ШЕВЧЕНКА", { run: { bold: true, size: 28 }, after: 160 }),
   Center("ФАКУЛЬТЕТ ІНФОРМАЦІЙНИХ ТЕХНОЛОГІЙ", { run: { bold: true }, after: 60 }),
   Center("КАФЕДРА ІНТЕЛЕКТУАЛЬНИХ ТЕХНОЛОГІЙ", { run: { bold: true }, after: 1800 }),
-  Center("Лабораторна робота №3", { run: { bold: true, size: 36 }, after: 120 }),
+  Center("Лабораторна робота №3", { run: { bold: true, size: 28 }, after: 120 }),
   Center("з дисципліни «Рекомендаційні системи»", { run: { size: 28 }, after: 360 }),
   Center("Тема: «Побудова рекомендації на основі колаборативних методів фільтрації на основі класичних підходів»", { run: { size: 28 }, after: 240 }),
   Center("Варіант 1", { run: { size: 28, bold: true }, after: 1500 }),
@@ -61,7 +61,7 @@ push(
     ["Активні", String(M.groups[GA]), `${f1(NB[GA].mean_courses)} (${NB[GA].min_courses}–${NB[GA].max_courses})`, "аналізуються; джерело однорангових"],
     ["Пасивні", String(M.groups[GP]), `${f1(NB[GP].mean_courses)} (${NB[GP].min_courses}–${NB[GP].max_courses})`, "аналізуються; джерело однорангових"],
     ["Нові", String(M.groups["нові (0)"]), "0", "не розглядаються (немає взаємодій)"],
-  ], [1500, 1500, 3000, 3355], { size: 20, aligns: [A.LEFT, A.CENTER, A.CENTER, A.LEFT] }),
+  ], [1500, 1500, 3000, 3355], { size: 19, aligns: [A.LEFT, A.CENTER, A.CENTER, A.LEFT] }),
   Gap(),
   P(`Кластерна інформація про курси взята з ЛР1 (метрика C1, k = 10). Курсів із принаймні однією взаємодією – ${n(M.eligible)}; ${M.new_courses} нових курсів без взаємодій колаборативний метод оцінити не може – для них лишається контентний підхід ЛР2.`)
 );
@@ -140,7 +140,7 @@ push(
   P(`Для оцінки MAE та RMSE у користувачів із ≥ 2 курсами приховано 20 % взаємодій: ${n(ACC.meta.n_pairs[GA])} пар активних і ${n(ACC.meta.n_pairs[GP])} пасивних. Схожості перераховано на решті даних; базові лінії – середня користувача та середня курсу.`),
   Caption("Точність прогнозу сили взаємодії на відкладеній вибірці (MAE, RMSE; покриття, %)", "tab"),
   Tab(["Метод", "MAE акт.", "RMSE акт.", "Покр. акт.", "MAE пас.", "RMSE пас.", "Покр. пас."], AC_ROWS.map(acRow),
-    [2875, 1080, 1080, 1080, 1080, 1080, 1080], { size: 17, aligns: [A.LEFT, A.CENTER, A.CENTER, A.CENTER, A.CENTER, A.CENTER, A.CENTER] }),
+    [2875, 1080, 1080, 1080, 1080, 1080, 1080], { size: 19, aligns: [A.LEFT, A.CENTER, A.CENTER, A.CENTER, A.CENTER, A.CENTER, A.CENTER] }),
   Gap(),
   P(`За MAE методи близькі до базових ліній. В активних РЕК. 5 трохи краща за середню користувача (${f2(ac("РЕК. 5 – item-based", "MAE_active"))} проти ${f2(ac(BU, "MAE_active"))}); РЕК. 1, 2 і 4 мають ${f2(ac("РЕК. 1 – Пірсон", "MAE_active"))}–${f2(ac("РЕК. 4 – кращі сусіди", "MAE_active"))}. У пасивних РЕК. 1, 2 і 4 дають MAE ${f2(ac("РЕК. 1 – Пірсон", "MAE_passive"))}–${f2(ac("РЕК. 4 – кращі сусіди", "MAE_passive"))}, але це близько до базової «середня курсу» (${f2(ac(BI, "MAE_passive"))}). РЕК. 3 має низьке покриття: ${pcn(ac("РЕК. 3 – ко-рейтинг", "coverage_active"))} % в активних і ${pcn(ac("РЕК. 3 – ко-рейтинг", "coverage_passive"))} % у пасивних.`),
   P(`Сила взаємодії об'єднує різні події та має довгий хвіст, тому її точне значення прогнозувати складно. Для ТОП-10 важливіше правильне ранжування: РЕК. 1, 2, 4 і 5 дають HR@10 ${hr(GA, "rec1")}–${hr(GA, "rec5")} % проти ${hr(GA, "random")} % у випадкового списку. Тому HR@10 був основним критерієм, а MAE і RMSE – додатковими.`),
@@ -166,7 +166,7 @@ push(
   );
   const rows = [];
   for (let r = 0; r < 5; r++) rows.push([String(r + 1), ...RECS.map((k) => { const x = e.recs[k][r]; return x ? `${x.course_id} ${x.title} [к.${x.cluster}], ${f1(x.predicted_strength)}` : "–"; })]);
-  push(Tab(["№", ...RECS.map(nm)], rows, [400, 1791, 1791, 1791, 1791, 1791], { size: 15, keepTogether: true }), Gap(80));
+  push(Tab(["№", ...RECS.map(nm)], rows, [400, 1791, 1791, 1791, 1791, 1791], { size: 19, keepTogether: true }), Gap(80));
 });
 
 // ---------------------------------------------------------------- 6. Порівняння
@@ -184,9 +184,9 @@ push(
   H2("6.3. Різноманітність"),
   P(`ILD = 1 − середня контентна схожість пар курсів у списку (формула з ЛР2). Для РЕК. 1–5 вона становить ${f2(mv("REC5", GA, "ILD"))}–${f2(mv("REC3", GA, "ILD"))} (активні) та ${f2(mv("REC5", GP, "ILD"))}–${f2(mv("REC3", GP, "ILD"))} (пасивні), для пулів ЛР2 №1–№3 – ${f2(mv("ЛР2 №1", GA, "ILD"))} / ${f2(mv("ЛР2 №1", GP, "ILD"))}, для стратегії В – ${f2(mv("ЛР2 №4 (M=100)", GA, "ILD"))} / ${f2(mv("ЛР2 №4 (M=100)", GP, "ILD"))}. Висока різноманітність значною мірою зумовлена підвибіркою, де лише ≈ 10 % кандидатів належать до області інтересів користувача; частка таких рекомендацій в активних – ${pc(mv("REC3", GA, "precision_area"))}–${pc(mv("REC5", GA, "precision_area"))} проти ${pc(mv("ЛР2 №1", GA, "precision_area"))} у ЛР2.`),
   Caption("Показники порівняння для активних користувачів", "tab"),
-  Tab(mhead, ALLL.map((l) => mrow(l, GA)), mw, { size: 17, aligns: [A.LEFT, ...Array(7).fill(A.CENTER)] }),
+  Tab(mhead, ALLL.map((l) => mrow(l, GA)), mw, { size: 19, aligns: [A.LEFT, ...Array(7).fill(A.CENTER)] }),
   Caption("Показники порівняння для пасивних користувачів", "tab"),
-  Tab(mhead, ALLL.map((l) => mrow(l, GP)), mw, { size: 17, aligns: [A.LEFT, ...Array(7).fill(A.CENTER)] }),
+  Tab(mhead, ALLL.map((l) => mrow(l, GP)), mw, { size: 19, aligns: [A.LEFT, ...Array(7).fill(A.CENTER)] }),
   P("* частка рекомендацій з тематичної області, що збігається з прихованою «істинною» областю користувача; допоміжна оцінка на синтетичних даних, у реальній системі такої мітки немає.", { indent: { firstLine: 0 }, before: 40 }),
   ...Figure("l3_measures.png", "Порівняння показників: повтори між користувачами (а), різноманітність ILD (б), збіг з ЛР2 (в), частка «популярних» курсів (г)", 620)
 );
@@ -219,7 +219,7 @@ const doc = new Document({
   styles: {
     default: { document: { run: { font: FONT, size: 28 } } },
     paragraphStyles: [
-      { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true, run: { size: 32, bold: true, font: FONT, color: "000000" }, paragraph: { spacing: { before: 120, after: 200 }, outlineLevel: 0 } },
+      { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true, run: { size: 28, bold: true, font: FONT, color: "000000" }, paragraph: { spacing: { before: 120, after: 200 }, outlineLevel: 0 } },
       { id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true, run: { size: 28, bold: true, font: FONT, color: "000000" }, paragraph: { spacing: { before: 280, after: 140 }, outlineLevel: 1 } },
     ],
   },
