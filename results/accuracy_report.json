@@ -1,0 +1,103 @@
+{
+ "meta": {
+  "n_eval": {
+   "активні": 282,
+   "пасивні": 573
+  },
+  "n_pairs": {
+   "активні": 5152,
+   "пасивні": 614
+  },
+  "hide_share": 0.2
+ },
+ "rows": [
+  {
+   "method": "База: середня користувача",
+   "MAE_active": 1.836201159273209,
+   "RMSE_active": 2.40958060310313,
+   "coverage_active": 1.0,
+   "MAE_base_same_active": 1.836201159273209,
+   "MAE_passive": 1.9320005368564845,
+   "RMSE_passive": 2.805672839664783,
+   "coverage_passive": 1.0,
+   "MAE_base_same_passive": 1.9320005368564845
+  },
+  {
+   "method": "База: середня курсу",
+   "MAE_active": 1.8852920749883972,
+   "RMSE_active": 2.504115246034049,
+   "coverage_active": 0.9868012422360248,
+   "MAE_base_same_active": 1.837157880332141,
+   "MAE_passive": 1.7780204791445429,
+   "RMSE_passive": 2.3419421028998886,
+   "coverage_passive": 0.9592833876221498,
+   "MAE_base_same_passive": 1.9240107481320905
+  },
+  {
+   "method": "Реснік, Пірсон за ко-рейтингом (класика)",
+   "MAE_active": 1.9378106751925963,
+   "RMSE_active": 2.5748071897349507,
+   "coverage_active": 0.9829192546583851,
+   "MAE_base_same_active": 1.8367914493021056,
+   "MAE_passive": 2.3760859227430395,
+   "RMSE_passive": 3.151468329671406,
+   "coverage_passive": 0.43322475570032576,
+   "MAE_base_same_passive": 1.9655927221134997
+  },
+  {
+   "method": "РЕК. 1 – Пірсон",
+   "MAE_active": 1.8916951351744191,
+   "RMSE_active": 2.5554820161898366,
+   "coverage_active": 0.9809782608695652,
+   "MAE_base_same_active": 1.8365866198181753,
+   "MAE_passive": 1.7662281906074648,
+   "RMSE_passive": 2.504253894562158,
+   "coverage_passive": 0.8501628664495114,
+   "MAE_base_same_passive": 1.9438768327020157
+  },
+  {
+   "method": "РЕК. 2 – Пірсон + IUF",
+   "MAE_active": 1.8923942432925454,
+   "RMSE_active": 2.552106599536608,
+   "coverage_active": 0.9813664596273292,
+   "MAE_base_same_active": 1.837211410484561,
+   "MAE_passive": 1.7740474500677226,
+   "RMSE_passive": 2.5093538112302913,
+   "coverage_passive": 0.8517915309446255,
+   "MAE_base_same_passive": 1.944546422546654
+  },
+  {
+   "method": "РЕК. 3 – ко-рейтинг",
+   "MAE_active": 2.0714158208274354,
+   "RMSE_active": 2.96560632324164,
+   "coverage_active": 0.8068711180124224,
+   "MAE_base_same_active": 1.8358130845312886,
+   "MAE_passive": 2.261764007110726,
+   "RMSE_passive": 3.2301056806478234,
+   "coverage_passive": 0.34201954397394135,
+   "MAE_base_same_passive": 1.9946215743491713
+  },
+  {
+   "method": "РЕК. 4 – кращі сусіди",
+   "MAE_active": 1.9365518868168128,
+   "RMSE_active": 2.7185624514689244,
+   "coverage_active": 0.8618012422360248,
+   "MAE_base_same_active": 1.8537925347854103,
+   "MAE_passive": 1.775053104192342,
+   "RMSE_passive": 2.5318914823062797,
+   "coverage_passive": 0.8517915309446255,
+   "MAE_base_same_passive": 1.944546422546654
+  },
+  {
+   "method": "РЕК. 5 – item-based",
+   "MAE_active": 1.8194643276221685,
+   "RMSE_active": 2.4341020583826682,
+   "coverage_active": 0.9856366459627329,
+   "MAE_base_same_active": 1.8370863266082191,
+   "MAE_passive": 1.9160439232895154,
+   "RMSE_passive": 2.87922699266366,
+   "coverage_passive": 0.8534201954397395,
+   "MAE_base_same_passive": 1.9424849812211766
+  }
+ ]
+}
