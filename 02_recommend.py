@@ -13,7 +13,7 @@ grp = u["activity_group"].to_numpy()
 hist = (R > 0).toarray()
 GMAP = {"активні": "active", "пасивні": "passive"}
 rows = np.where(np.isin(grp, EVAL_GROUPS))[0]
-print("користувачів:", {g: int((grp == g).sum()) for g in EVAL_GROUPS}, "| «звичайні» використовуються лише як однорангові")
+print("користувачів:", {g: int((grp == g).sum()) for g in EVAL_GROUPS})
 
 cands = sample_candidates(R, hist, cl, rows)
 assert all(not hist[i, cands[i]].any() and len(cands[i]) == N_CAND for i in rows)      # перевірка: жодного оціненого курсу
